@@ -6,11 +6,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name="order_item")
-public class OrderItem {
+public class OrderItem implements Serializable {
 
     @Id
     @Column(name="id")
