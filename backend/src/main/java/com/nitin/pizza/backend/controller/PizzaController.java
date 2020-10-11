@@ -3,10 +3,9 @@ package com.nitin.pizza.backend.controller;
 import com.nitin.pizza.backend.entity.Pizza;
 import com.nitin.pizza.backend.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -19,4 +18,12 @@ public class PizzaController {
     public Pizza getPizzaById(@PathVariable String id){
         return pizzaRepository.getOne(id);
     }
+
+    @GetMapping("/pizza/all")
+    public List<Pizza> getAllPizza(){
+        return pizzaRepository.getAll();
+    }
+
+//    @DeleteMapping("/pizza/delete/{id}")
+//    public Pizza deletePizzaById(@PathVariable String)
 }
